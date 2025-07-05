@@ -9,10 +9,10 @@
 
 // Coneccion con la db
 
-#define IPDB 		"51.81.59.76"
-#define USERDB 		"u3108285_T4Lb9MilLa"
-#define PASSDB 		"QXt!@ZFYOUInM@YAybo1Bdia"
-#define DATEBASE	"s3108285_qwq"
+#define IPDB 		"64.235.35.111:3306"
+#define USERDB 		"u52_oNqCYcnzF4"
+#define PASSDB 		"x2spcheo73aGs@o6T!uP.Gam"
+#define DATEBASE	"s52_test"
 
 
 // dialog defines
