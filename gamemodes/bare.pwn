@@ -431,6 +431,6 @@ CMD:ayuda(playerid){
 }
 
 CMD:testgithub(playerid){
-	SendClientMessage(playerid, -1, "Test Github XD"); // vez?
+	SendClientMessage(playerid, -1, "Test Github"); // vez?
 	return 1;
 }	
