@@ -1,0 +1,10 @@
+// bajar archivos
+git pull origin main // Baja los archivos modificados
+
+
+// subir archivos
+git add . // dice que va a subir todos los archivos que se han modificado
+
+git commit -m "" // sirve para decir los cambios echos 
+
+git push origin main // sube los archivos que digiste en git add .
