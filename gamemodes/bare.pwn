@@ -325,7 +325,7 @@ forward VerifyUser(playerid);
 public VerifyUser(playerid)
 {
 	new Rows;
-	cache_get_row_count(Rows); // No se pasa parámetro
+	cache_get_row_count(Rows);
     if (!Rows)
     {
         ShowPlayerDialog(playerid, DIALOG_REGISTRO, DIALOG_STYLE_PASSWORD, "Registro", "Bienvenido\n\nIngrese una clave para registrarse.", "Registrar", "Cancelar");
@@ -408,8 +408,6 @@ public TextDraws(){
 	TextDrawBackgroundColor(Discord1, 51);
 	TextDrawFont(Discord1, 2);
 	TextDrawSetProportional(Discord1, 1);
-
-	
 }
 
 
@@ -431,3 +429,7 @@ CMD:ayuda(playerid){
 	DialogHelp(playerid);
 	return 1;
 }
+
+CMD:testgithub(playerid){
+	return 1;
+}	
