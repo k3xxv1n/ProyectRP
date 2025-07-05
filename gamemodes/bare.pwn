@@ -31,11 +31,6 @@
 
 new MySQL:db;
 
-//Global Textdraws del Discord: https://discord.gg/DDCPeQ9jT9 
-
-new Text:CuadroDiscord0;
-new Text:Discord1;
-
 
 //enums 
 // aqui crearemos todos los datos que almacenaremos en la db
@@ -367,7 +362,6 @@ public OnGameModeInit()
 
 
 	CargarDB();
-	TextDraws();
 
 	return 1;
 }
@@ -384,32 +378,6 @@ public CargarDB(){
 		printf("Coneccion con la datebase Exitosa");
 	}
 }
-
-////////////////////////////////TEXTDRAWNS///////////////////////////////////////////////////////
-forward TextDraws();
-public TextDraws(){
-	CuadroDiscord0 = TextDrawCreate(226.000030, 450.246673, "usebox");
-	TextDrawLetterSize(CuadroDiscord0, 0.000000, -2.562594);
-	TextDrawTextSize(CuadroDiscord0, -10.800002, 0.000000);
-	TextDrawAlignment(CuadroDiscord0, 1);
-	TextDrawColor(CuadroDiscord0, 0);
-	TextDrawUseBox(CuadroDiscord0, true);
-	TextDrawBoxColor(CuadroDiscord0, 255);
-	TextDrawSetShadow(CuadroDiscord0, 0);
-	TextDrawSetOutline(CuadroDiscord0, 0);
-	TextDrawFont(CuadroDiscord0, 0);
-
-	Discord1 = TextDrawCreate(3.999972, 433.813262, "https://discord.gg/DDCPeQ9jT9");
-	TextDrawLetterSize(Discord1, 0.291598, 1.062400);
-	TextDrawAlignment(Discord1, 1);
-	TextDrawColor(Discord1, -16776961);
-	TextDrawSetShadow(Discord1, 0);
-	TextDrawSetOutline(Discord1, 1);
-	TextDrawBackgroundColor(Discord1, 51);
-	TextDrawFont(Discord1, 2);
-	TextDrawSetProportional(Discord1, 1);
-}
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////comandos testear IC//
