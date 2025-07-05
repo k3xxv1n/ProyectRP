@@ -1,0 +1,3 @@
+comando para copilar en termux
+
+pawncc -i/sdcard/sam-server-rp/pawno/include /sdcard/sam-server-rp/gamemodes/bare.pwn

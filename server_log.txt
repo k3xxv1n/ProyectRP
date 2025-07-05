@@ -1,0 +1,925 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:35:50] 
+[21:35:50] Server Plugins
+[21:35:50] --------------
+[21:35:50]  Loading plugin: mysql
+[21:35:50]  >> plugin.mysql: R41-4 successfully loaded.
+[21:35:50]   Loaded.
+[21:35:50]  Loading plugin: sscanf
+[21:35:50] 
+[21:35:50]  ===============================
+[21:35:50] 
+[21:35:50]       sscanf plugin loaded.     
+[21:35:50] 
+[21:35:50]          Version: 2.13.8
+[21:35:50] 
+[21:35:50]    (c) 2022 Alex "Y_Less" Cole  
+[21:35:50] 
+[21:35:50]  ===============================
+[21:35:50] 
+[21:35:50]   Loaded.
+[21:35:50]  Loading plugin: streamer
+[21:35:50] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:35:50]   Loaded.
+[21:35:50]  Loaded 3 plugins.
+
+[21:35:50] 
+[21:35:50] Filterscripts
+[21:35:50] ---------------
+[21:35:50]   Loaded 0 filterscripts.
+
+[21:35:50] Coneccion con la datebase fracasada
+[21:35:50] 
+----------------------------------
+[21:35:50]   Servidor iniciado
+
+[21:35:50] ----------------------------------
+
+[21:35:50] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:37:29] 
+[21:37:29] Server Plugins
+[21:37:29] --------------
+[21:37:29]  Loading plugin: mysql
+[21:37:29]  >> plugin.mysql: R41-4 successfully loaded.
+[21:37:29]   Loaded.
+[21:37:29]  Loading plugin: sscanf
+[21:37:29] 
+[21:37:29]  ===============================
+[21:37:29] 
+[21:37:29]       sscanf plugin loaded.     
+[21:37:29] 
+[21:37:29]          Version: 2.13.8
+[21:37:29] 
+[21:37:29]    (c) 2022 Alex "Y_Less" Cole  
+[21:37:29] 
+[21:37:29]  ===============================
+[21:37:29] 
+[21:37:29]   Loaded.
+[21:37:29]  Loading plugin: streamer
+[21:37:29] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:37:29]   Loaded.
+[21:37:29]  Loaded 3 plugins.
+
+[21:37:29] 
+[21:37:29] Filterscripts
+[21:37:29] ---------------
+[21:37:29]   Loaded 0 filterscripts.
+
+[21:37:29] Coneccion con la datebase Exitosa
+[21:37:29] 
+----------------------------------
+[21:37:29]   Servidor iniciado
+
+[21:37:29] ----------------------------------
+
+[21:37:29] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:38:04] 
+[21:38:04] Server Plugins
+[21:38:04] --------------
+[21:38:04]  Loading plugin: mysql
+[21:38:04]  >> plugin.mysql: R41-4 successfully loaded.
+[21:38:04]   Loaded.
+[21:38:04]  Loading plugin: sscanf
+[21:38:04] 
+[21:38:04]  ===============================
+[21:38:04] 
+[21:38:04]       sscanf plugin loaded.     
+[21:38:04] 
+[21:38:04]          Version: 2.13.8
+[21:38:04] 
+[21:38:04]    (c) 2022 Alex "Y_Less" Cole  
+[21:38:04] 
+[21:38:04]  ===============================
+[21:38:04] 
+[21:38:04]   Loaded.
+[21:38:04]  Loading plugin: streamer
+[21:38:04] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:38:04]   Loaded.
+[21:38:04]  Loaded 3 plugins.
+
+[21:38:04] 
+[21:38:04] Filterscripts
+[21:38:04] ---------------
+[21:38:04]   Loaded 0 filterscripts.
+
+[21:38:04] Coneccion con la datebase Exitosa
+[21:38:04] 
+----------------------------------
+[21:38:04]   Servidor iniciado
+
+[21:38:04] ----------------------------------
+
+[21:38:04] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:39:49] 
+[21:39:49] Server Plugins
+[21:39:49] --------------
+[21:39:49]  Loading plugin: mysql
+[21:39:49]  >> plugin.mysql: R41-4 successfully loaded.
+[21:39:49]   Loaded.
+[21:39:49]  Loading plugin: sscanf
+[21:39:49] 
+[21:39:49]  ===============================
+[21:39:49] 
+[21:39:49]       sscanf plugin loaded.     
+[21:39:49] 
+[21:39:49]          Version: 2.13.8
+[21:39:49] 
+[21:39:49]    (c) 2022 Alex "Y_Less" Cole  
+[21:39:49] 
+[21:39:49]  ===============================
+[21:39:49] 
+[21:39:49]   Loaded.
+[21:39:49]  Loading plugin: streamer
+[21:39:49] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:39:49]   Loaded.
+[21:39:49]  Loaded 3 plugins.
+
+[21:39:49] 
+[21:39:49] Filterscripts
+[21:39:49] ---------------
+[21:39:49]   Loaded 0 filterscripts.
+
+[21:39:49] Coneccion con la datebase fracasada
+[21:39:49] 
+----------------------------------
+[21:39:49]   Servidor iniciado
+
+[21:39:49] ----------------------------------
+
+[21:39:49] Number of vehicle models: 0
+[21:39:49] --- Server Shutting Down.
+[21:39:49] plugin.mysql: Unloading plugin...
+[21:39:49] plugin.mysql: Plugin unloaded.
+[21:39:49] 
+[21:39:49]  ===============================
+[21:39:49] 
+[21:39:49]      sscanf plugin unloaded.    
+[21:39:49] 
+[21:39:49]  ===============================
+[21:39:49] 
+[21:39:49] 
+
+*** Streamer Plugin v2.9.6 by Incognito unloaded ***
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:40:21] 
+[21:40:21] Server Plugins
+[21:40:21] --------------
+[21:40:21]  Loading plugin: mysql
+[21:40:22]  >> plugin.mysql: R41-4 successfully loaded.
+[21:40:22]   Loaded.
+[21:40:22]  Loading plugin: sscanf
+[21:40:22] 
+[21:40:22]  ===============================
+[21:40:22] 
+[21:40:22]       sscanf plugin loaded.     
+[21:40:22] 
+[21:40:22]          Version: 2.13.8
+[21:40:22] 
+[21:40:22]    (c) 2022 Alex "Y_Less" Cole  
+[21:40:22] 
+[21:40:22]  ===============================
+[21:40:22] 
+[21:40:22]   Loaded.
+[21:40:22]  Loading plugin: streamer
+[21:40:22] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:40:22]   Loaded.
+[21:40:22]  Loaded 3 plugins.
+
+[21:40:22] 
+[21:40:22] Filterscripts
+[21:40:22] ---------------
+[21:40:22]   Loaded 0 filterscripts.
+
+[21:40:22] Coneccion con la datebase Exitosa
+[21:40:22] 
+----------------------------------
+[21:40:22]   Servidor iniciado
+
+[21:40:22] ----------------------------------
+
+[21:40:22] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:00:54] 
+[19:00:54] Server Plugins
+[19:00:54] --------------
+[19:00:54]  Loading plugin: mysql
+[19:00:54]  >> plugin.mysql: R41-4 successfully loaded.
+[19:00:54]   Loaded.
+[19:00:54]  Loading plugin: sscanf
+[19:00:54] 
+[19:00:54]  ===============================
+[19:00:54] 
+[19:00:54]       sscanf plugin loaded.     
+[19:00:54] 
+[19:00:54]          Version: 2.13.8
+[19:00:54] 
+[19:00:54]    (c) 2022 Alex "Y_Less" Cole  
+[19:00:54] 
+[19:00:54]  ===============================
+[19:00:54] 
+[19:00:54]   Loaded.
+[19:00:54]  Loading plugin: streamer
+[19:00:54] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:00:54]   Loaded.
+[19:00:54]  Loaded 3 plugins.
+
+[19:00:54] 
+[19:00:54] Filterscripts
+[19:00:54] ---------------
+[19:00:54]   Loaded 0 filterscripts.
+
+[19:00:54] Script[gamemodes/bare.amx]: Run time error 19: "File or function is not found"
+[19:00:54] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:01:51] 
+[19:01:51] Server Plugins
+[19:01:51] --------------
+[19:01:51]  Loading plugin: mysql
+[19:01:51]  >> plugin.mysql: R41-4 successfully loaded.
+[19:01:51]   Loaded.
+[19:01:51]  Loading plugin: sscanf
+[19:01:51] 
+[19:01:51]  ===============================
+[19:01:51] 
+[19:01:51]       sscanf plugin loaded.     
+[19:01:51] 
+[19:01:51]          Version: 2.13.8
+[19:01:51] 
+[19:01:51]    (c) 2022 Alex "Y_Less" Cole  
+[19:01:51] 
+[19:01:51]  ===============================
+[19:01:51] 
+[19:01:51]   Loaded.
+[19:01:51]  Loading plugin: streamer
+[19:01:51] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:01:51]   Loaded.
+[19:01:51]  Loading plugin: pawncmd
+[19:01:51] [Pawn.CMD] plugin v3.4.0 loading...
+[19:01:51] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:01:51]   Loaded.
+[19:01:51]  Loaded 4 plugins.
+
+[19:01:51] 
+[19:01:51] Filterscripts
+[19:01:51] ---------------
+[19:01:51]   Loaded 0 filterscripts.
+
+[19:01:51] Coneccion con la datebase Exitosa
+[19:01:51] 
+----------------------------------
+[19:01:51]   Servidor iniciado
+
+[19:01:51] ----------------------------------
+
+[19:01:51] Number of vehicle models: 0
+[19:02:33] [connection] 127.0.0.1:62818 requests connection cookie.
+[19:02:34] [connection] incoming connection: 127.0.0.1:62818 id: 0
+[19:02:34] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:03:22] [part] Kel_Wayne has left the server (0:1)
+[19:04:31] [connection] 127.0.0.1:50173 requests connection cookie.
+[19:04:32] [connection] incoming connection: 127.0.0.1:50173 id: 0
+[19:04:32] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:04:42] [part] Kel_Wayne has left the server (0:1)
+[19:05:04] [connection] 127.0.0.1:50003 requests connection cookie.
+[19:05:05] [connection] incoming connection: 127.0.0.1:50003 id: 0
+[19:05:06] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:05:14] [part] Kel_Wayne has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:07:03] 
+[19:07:03] Server Plugins
+[19:07:03] --------------
+[19:07:03]  Loading plugin: mysql
+[19:07:03]  >> plugin.mysql: R41-4 successfully loaded.
+[19:07:03]   Loaded.
+[19:07:03]  Loading plugin: sscanf
+[19:07:03] 
+[19:07:03]  ===============================
+[19:07:03] 
+[19:07:03]       sscanf plugin loaded.     
+[19:07:03] 
+[19:07:03]          Version: 2.13.8
+[19:07:03] 
+[19:07:03]    (c) 2022 Alex "Y_Less" Cole  
+[19:07:03] 
+[19:07:03]  ===============================
+[19:07:03] 
+[19:07:03]   Loaded.
+[19:07:03]  Loading plugin: streamer
+[19:07:03] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:07:03]   Loaded.
+[19:07:03]  Loading plugin: pawncmd
+[19:07:03] [Pawn.CMD] plugin v3.4.0 loading...
+[19:07:03] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:07:03]   Loaded.
+[19:07:03]  Loaded 4 plugins.
+
+[19:07:03] 
+[19:07:03] Filterscripts
+[19:07:03] ---------------
+[19:07:03]   Loaded 0 filterscripts.
+
+[19:07:03] Coneccion con la datebase Exitosa
+[19:07:03] 
+----------------------------------
+[19:07:03]   Servidor iniciado
+
+[19:07:03] ----------------------------------
+
+[19:07:03] Number of vehicle models: 0
+[19:07:23] [connection] 127.0.0.1:61956 requests connection cookie.
+[19:07:24] [connection] incoming connection: 127.0.0.1:61956 id: 0
+[19:07:25] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:07:32] [part] Kel_Wayne has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:27:16] 
+[19:27:16] Server Plugins
+[19:27:16] --------------
+[19:27:16]  Loading plugin: mysql
+[19:27:16]  >> plugin.mysql: R41-4 successfully loaded.
+[19:27:16]   Loaded.
+[19:27:16]  Loading plugin: sscanf
+[19:27:16] 
+[19:27:16]  ===============================
+[19:27:16] 
+[19:27:16]       sscanf plugin loaded.     
+[19:27:16] 
+[19:27:16]          Version: 2.13.8
+[19:27:16] 
+[19:27:16]    (c) 2022 Alex "Y_Less" Cole  
+[19:27:16] 
+[19:27:16]  ===============================
+[19:27:16] 
+[19:27:16]   Loaded.
+[19:27:16]  Loading plugin: streamer
+[19:27:16] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:27:16]   Loaded.
+[19:27:16]  Loading plugin: pawncmd
+[19:27:16] [Pawn.CMD] plugin v3.4.0 loading...
+[19:27:16] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:27:16]   Loaded.
+[19:27:16]  Loaded 4 plugins.
+
+[19:27:17] 
+[19:27:17] Filterscripts
+[19:27:17] ---------------
+[19:27:17]   Loaded 0 filterscripts.
+
+[19:27:17] Coneccion con la datebase Exitosa
+[19:27:17] 
+----------------------------------
+[19:27:17]   Servidor iniciado
+
+[19:27:17] ----------------------------------
+
+[19:27:17] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:27:58] 
+[19:27:58] Server Plugins
+[19:27:58] --------------
+[19:27:58]  Loading plugin: mysql
+[19:27:58]  >> plugin.mysql: R41-4 successfully loaded.
+[19:27:58]   Loaded.
+[19:27:58]  Loading plugin: sscanf
+[19:27:58] 
+[19:27:58]  ===============================
+[19:27:58] 
+[19:27:58]       sscanf plugin loaded.     
+[19:27:58] 
+[19:27:58]          Version: 2.13.8
+[19:27:58] 
+[19:27:58]    (c) 2022 Alex "Y_Less" Cole  
+[19:27:58] 
+[19:27:58]  ===============================
+[19:27:58] 
+[19:27:58]   Loaded.
+[19:27:58]  Loading plugin: streamer
+[19:27:58] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:27:58]   Loaded.
+[19:27:58]  Loading plugin: pawncmd
+[19:27:58] [Pawn.CMD] plugin v3.4.0 loading...
+[19:27:58] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:27:58]   Loaded.
+[19:27:58]  Loaded 4 plugins.
+
+[19:27:58] 
+[19:27:58] Filterscripts
+[19:27:58] ---------------
+[19:27:58]   Loaded 0 filterscripts.
+
+[19:27:58] Coneccion con la datebase Exitosa
+[19:27:58] 
+----------------------------------
+[19:27:58]   Servidor iniciado
+
+[19:27:58] ----------------------------------
+
+[19:27:58] Number of vehicle models: 0
+[19:28:22] [connection] 127.0.0.1:64046 requests connection cookie.
+[19:28:23] [connection] incoming connection: 127.0.0.1:64046 id: 0
+[19:28:24] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:31:00] [part] Kel_Wayne has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:46:27] 
+[19:46:27] Server Plugins
+[19:46:27] --------------
+[19:46:27]  Loading plugin: mysql
+[19:46:27]  >> plugin.mysql: R41-4 successfully loaded.
+[19:46:27]   Loaded.
+[19:46:27]  Loading plugin: sscanf
+[19:46:27] 
+[19:46:27]  ===============================
+[19:46:27] 
+[19:46:27]       sscanf plugin loaded.     
+[19:46:27] 
+[19:46:27]          Version: 2.13.8
+[19:46:27] 
+[19:46:27]    (c) 2022 Alex "Y_Less" Cole  
+[19:46:27] 
+[19:46:27]  ===============================
+[19:46:27] 
+[19:46:27]   Loaded.
+[19:46:27]  Loading plugin: streamer
+[19:46:27] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:46:27]   Loaded.
+[19:46:27]  Loading plugin: pawncmd
+[19:46:27] [Pawn.CMD] plugin v3.4.0 loading...
+[19:46:27] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:46:27]   Loaded.
+[19:46:27]  Loaded 4 plugins.
+
+[19:46:27] 
+[19:46:27] Filterscripts
+[19:46:27] ---------------
+[19:46:27]   Loaded 0 filterscripts.
+
+[19:46:27] Coneccion con la datebase Exitosa
+[19:46:27] 
+----------------------------------
+[19:46:27]   Servidor iniciado
+
+[19:46:27] ----------------------------------
+
+[19:46:27] Number of vehicle models: 0
+[19:46:47] [connection] 127.0.0.1:62278 requests connection cookie.
+[19:46:48] [connection] incoming connection: 127.0.0.1:62278 id: 0
+[19:46:48] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:48:33] [part] Kel_Wayne has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:48:46] 
+[19:48:46] Server Plugins
+[19:48:46] --------------
+[19:48:46]  Loading plugin: mysql
+[19:48:46]  >> plugin.mysql: R41-4 successfully loaded.
+[19:48:46]   Loaded.
+[19:48:46]  Loading plugin: sscanf
+[19:48:46] 
+[19:48:46]  ===============================
+[19:48:46] 
+[19:48:46]       sscanf plugin loaded.     
+[19:48:46] 
+[19:48:46]          Version: 2.13.8
+[19:48:46] 
+[19:48:46]    (c) 2022 Alex "Y_Less" Cole  
+[19:48:46] 
+[19:48:46]  ===============================
+[19:48:46] 
+[19:48:46]   Loaded.
+[19:48:46]  Loading plugin: streamer
+[19:48:46] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:48:46]   Loaded.
+[19:48:46]  Loading plugin: pawncmd
+[19:48:46] [Pawn.CMD] plugin v3.4.0 loading...
+[19:48:46] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:48:46]   Loaded.
+[19:48:46]  Loaded 4 plugins.
+
+[19:48:46] 
+[19:48:46] Filterscripts
+[19:48:46] ---------------
+[19:48:46]   Loaded 0 filterscripts.
+
+[19:48:46] Coneccion con la datebase Exitosa
+[19:48:46] 
+----------------------------------
+[19:48:46]   Servidor iniciado
+
+[19:48:46] ----------------------------------
+
+[19:48:46] Number of vehicle models: 0
+[19:49:18] [connection] 127.0.0.1:55961 requests connection cookie.
+[19:49:19] [connection] incoming connection: 127.0.0.1:55961 id: 0
+[19:49:19] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:49:36] [part] Kel_Wayne has left the server (0:1)
+[19:51:59] [connection] 127.0.0.1:55733 requests connection cookie.
+[19:52:00] [connection] incoming connection: 127.0.0.1:55733 id: 0
+[19:52:00] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:52:20] [part] Kel_Wayne has left the server (0:1)
+[19:54:33] [connection] 127.0.0.1:55054 requests connection cookie.
+[19:54:34] [connection] incoming connection: 127.0.0.1:55054 id: 0
+[19:54:34] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:54:58] [part] Kel_Wayne has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:56:20] 
+[19:56:20] Server Plugins
+[19:56:20] --------------
+[19:56:20]  Loading plugin: mysql
+[19:56:20]  >> plugin.mysql: R41-4 successfully loaded.
+[19:56:20]   Loaded.
+[19:56:20]  Loading plugin: sscanf
+[19:56:20] 
+[19:56:20]  ===============================
+[19:56:20] 
+[19:56:20]       sscanf plugin loaded.     
+[19:56:20] 
+[19:56:20]          Version: 2.13.8
+[19:56:20] 
+[19:56:20]    (c) 2022 Alex "Y_Less" Cole  
+[19:56:20] 
+[19:56:20]  ===============================
+[19:56:20] 
+[19:56:20]   Loaded.
+[19:56:20]  Loading plugin: streamer
+[19:56:20] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:56:20]   Loaded.
+[19:56:20]  Loading plugin: pawncmd
+[19:56:20] [Pawn.CMD] plugin v3.4.0 loading...
+[19:56:20] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:56:20]   Loaded.
+[19:56:20]  Loaded 4 plugins.
+
+[19:56:20] 
+[19:56:20] Filterscripts
+[19:56:20] ---------------
+[19:56:20]   Loaded 0 filterscripts.
+
+[19:56:20] Coneccion con la datebase Exitosa
+[19:56:20] 
+----------------------------------
+[19:56:20]   Servidor iniciado
+
+[19:56:20] ----------------------------------
+
+[19:56:20] Number of vehicle models: 0
+[19:56:46] [connection] 127.0.0.1:63907 requests connection cookie.
+[19:56:47] [connection] incoming connection: 127.0.0.1:63907 id: 0
+[19:56:47] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:57:03] [part] Kel_Wayne has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:57:37] 
+[19:57:37] Server Plugins
+[19:57:37] --------------
+[19:57:37]  Loading plugin: mysql
+[19:57:37]  >> plugin.mysql: R41-4 successfully loaded.
+[19:57:37]   Loaded.
+[19:57:37]  Loading plugin: sscanf
+[19:57:37] 
+[19:57:37]  ===============================
+[19:57:37] 
+[19:57:37]       sscanf plugin loaded.     
+[19:57:37] 
+[19:57:37]          Version: 2.13.8
+[19:57:37] 
+[19:57:37]    (c) 2022 Alex "Y_Less" Cole  
+[19:57:37] 
+[19:57:37]  ===============================
+[19:57:37] 
+[19:57:37]   Loaded.
+[19:57:37]  Loading plugin: streamer
+[19:57:37] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[19:57:37]   Loaded.
+[19:57:37]  Loading plugin: pawncmd
+[19:57:37] [Pawn.CMD] plugin v3.4.0 loading...
+[19:57:37] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[19:57:37]   Loaded.
+[19:57:37]  Loaded 4 plugins.
+
+[19:57:37] 
+[19:57:37] Filterscripts
+[19:57:37] ---------------
+[19:57:37]   Loaded 0 filterscripts.
+
+[19:57:37] Coneccion con la datebase Exitosa
+[19:57:37] 
+----------------------------------
+[19:57:37]   Servidor iniciado
+
+[19:57:37] ----------------------------------
+
+[19:57:37] Number of vehicle models: 0
+[19:57:58] [connection] 127.0.0.1:56959 requests connection cookie.
+[19:57:59] [connection] incoming connection: 127.0.0.1:56959 id: 0
+[19:58:00] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[19:58:27] [part] Kel_Wayne has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:01:21] 
+[20:01:21] Server Plugins
+[20:01:21] --------------
+[20:01:21]  Loading plugin: mysql
+[20:01:21]  >> plugin.mysql: R41-4 successfully loaded.
+[20:01:21]   Loaded.
+[20:01:21]  Loading plugin: sscanf
+[20:01:21] 
+[20:01:21]  ===============================
+[20:01:21] 
+[20:01:21]       sscanf plugin loaded.     
+[20:01:21] 
+[20:01:21]          Version: 2.13.8
+[20:01:21] 
+[20:01:21]    (c) 2022 Alex "Y_Less" Cole  
+[20:01:21] 
+[20:01:21]  ===============================
+[20:01:21] 
+[20:01:21]   Loaded.
+[20:01:21]  Loading plugin: streamer
+[20:01:21] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[20:01:21]   Loaded.
+[20:01:21]  Loading plugin: pawncmd
+[20:01:21] [Pawn.CMD] plugin v3.4.0 loading...
+[20:01:21] [Pawn.CMD] 
+
+    | Pawn.CMD 3.4.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 18:12:31
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.CMD
+
+[20:01:21]   Loaded.
+[20:01:21]  Loaded 4 plugins.
+
+[20:01:21] 
+[20:01:21] Filterscripts
+[20:01:21] ---------------
+[20:01:21]   Loaded 0 filterscripts.
+
+[20:01:21] Coneccion con la datebase Exitosa
+[20:01:21] 
+----------------------------------
+[20:01:21]   Servidor iniciado
+
+[20:01:21] ----------------------------------
+
+[20:01:21] Number of vehicle models: 0
+[20:01:44] [connection] 127.0.0.1:65471 requests connection cookie.
+[20:01:45] [connection] incoming connection: 127.0.0.1:65471 id: 0
+[20:01:45] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[20:02:41] [part] Kel_Wayne has left the server (0:1)
+[20:04:13] [connection] 127.0.0.1:56753 requests connection cookie.
+[20:04:14] [connection] incoming connection: 127.0.0.1:56753 id: 0
+[20:04:15] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[20:04:28] [part] Kel_Wayne has left the server (0:1)
+[20:04:45] [connection] 127.0.0.1:50866 requests connection cookie.
+[20:04:46] [connection] incoming connection: 127.0.0.1:50866 id: 0
+[20:04:46] [join] Kel_Wayne has joined the server (0:127.0.0.1)
+[20:04:52] [part] Kel_Wayne has left the server (0:1)
