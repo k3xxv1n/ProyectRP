@@ -31,22 +31,31 @@
 
 new MySQL:db;
 
+new const rankName[][] = {
+	"Usuario",
+	"Ayudante",
+	"Moderador",
+	"Moderador Global",
+	"Encargado Staff",
+	"CEO"
+};
 
 //enums 
 // aqui crearemos todos los datos que almacenaremos en la db
 enum jInfo
 {
-Contra[128],
-Correo[200],
-Genero,
-Edad,
-Ropa,
-Float:X,
-Float:Y,
-Float:Z,
-Float:Vida,
-Float:Chaleco,
-Dinero
+	Contra[128],
+	Correo[200],
+	Genero,
+	Edad,
+	Ropa,
+	Float:X,
+	Float:Y,
+	Float:Z,
+	Float:Vida,
+	Float:Chaleco,
+	Dinero,
+	pAdmin
 }
 
 new Player[MAX_PLAYERS][jInfo];
@@ -236,7 +245,7 @@ public SaveData(playerid)
 	GetPlayerPos(playerid, jX, jY, jZ);
 	GetPlayerHealth(playerid, hp);
 	GetPlayerArmour(playerid, chale);
-	mysql_format(db, query, sizeof query, "UPDATE `cuentas` SET `Edad`='%i',`Ropa`='%i',`X`='%f',`Y`='%f',`Z`='%f',`Genero`='%i',`Vida`='%f',`Chaleco`='%f' WHERE `Nombre`='%s'", Player[playerid][Edad], Player[playerid][Ropa], jX, jY, jZ, Player[playerid][Genero], hp, chale, nombre);
+	mysql_format(db, query, sizeof query, "UPDATE `cuentas` SET `Edad`='%i',`Ropa`='%i',`X`='%f',`Y`='%f',`Z`='%f',`Genero`='%i',`Vida`='%f',`Chaleco`='%f', `Admin`='%i' WHERE `Nombre`='%s'", Player[playerid][Edad], Player[playerid][Ropa], jX, jY, jZ, Player[playerid][Genero], hp, chale, Player[playerid][pAdmin], nombre);
 	mysql_query(db, query);
 
 	return 1;
@@ -254,15 +263,40 @@ public IngresoJugador(playerid)
     }
     else
     {
-        cache_get_value_int(0, "Ropa", Player[playerid][Ropa]);
-        cache_get_value_float(0, "X", Player[playerid][X]);
-        cache_get_value_float(0, "Y", Player[playerid][Y]);
-        cache_get_value_float(0, "Z", Player[playerid][Z]);
-        cache_get_value_int(0, "Genero", Player[playerid][Genero]);
-        cache_get_value_float(0, "Vida", Player[playerid][Vida]);
-        cache_get_value_float(0, "Chaleco", Player[playerid][Chaleco]);
-        cache_get_value_int(0, "Dinero", Player[playerid][Dinero]);
-        cache_get_value_int(0, "Edad", Player[playerid][Edad]);
+        new bool:isNull;
+
+        cache_is_value_name_null(0, "Ropa", isNull);
+        if (!isNull) cache_get_value_int(0, "Ropa", Player[playerid][Ropa]);
+
+        cache_is_value_name_null(0, "X", isNull);
+        if (!isNull) cache_get_value_float(0, "X", Player[playerid][X]);
+
+        cache_is_value_name_null(0, "Y", isNull);
+        if (!isNull) cache_get_value_float(0, "Y", Player[playerid][Y]);
+
+        cache_is_value_name_null(0, "Z", isNull);
+        if (!isNull) cache_get_value_float(0, "Z", Player[playerid][Z]);
+
+        cache_is_value_name_null(0, "Genero", isNull);
+        if (!isNull) cache_get_value_int(0, "Genero", Player[playerid][Genero]);
+
+        cache_is_value_name_null(0, "Vida", isNull);
+        if (!isNull) cache_get_value_float(0, "Vida", Player[playerid][Vida]);
+
+        cache_is_value_name_null(0, "Chaleco", isNull);
+        if (!isNull) cache_get_value_float(0, "Chaleco", Player[playerid][Chaleco]);
+
+        cache_is_value_name_null(0, "Dinero", isNull);
+        if (!isNull) cache_get_value_int(0, "Dinero", Player[playerid][Dinero]);
+
+        cache_is_value_name_null(0, "Edad", isNull);
+        if (!isNull) cache_get_value_int(0, "Edad", Player[playerid][Edad]);
+
+        cache_is_value_name_null(0, "Admin", isNull);
+        if (!isNull)
+            cache_get_value_int(0, "Admin", Player[playerid][pAdmin]);
+        else
+            Player[playerid][pAdmin] = 0;
 
         SetPVarInt(playerid, "PuedeIngresar", 1);
         IngresarJugador(playerid);
@@ -290,16 +324,16 @@ public CrearCuenta(playerid)
 
 	GetPlayerName(playerid, nombre, sizeof(nombre));
 
-		
 	if(!ValidarNombreApellido(nombre))
 	{
 		SendClientMessage(playerid, 0xFF0000AA, "Tu nombre debe tener formato Nombre_Apellido.");
 		return Kick(playerid);
 	}
 
-	
+	// Insertar todos los campos con valores por defecto si es necesario
 	mysql_format(db, query, sizeof(query), 
-		"INSERT INTO `cuentas` (`Nombre`, `Clave`, `Ropa`, `X`, `Y`, `Z`, `Genero`, `Vida`, `Dinero`) VALUES ('%s','%s',%i,1484.1082,-1668.4976,14.9159,%i,100,100000)", 
+		"INSERT INTO `cuentas` (`Nombre`, `Clave`, `Ropa`, `X`, `Y`, `Z`, `Genero`, `Vida`, `Dinero`, `Edad`, `Chaleco`, `Admin`) VALUES \
+        ('%s','%s',%i,1767.0145, -1896.5106, 13.5634,%i,100,0,0,0.0,0)", 
 		nombre, Player[playerid][Contra], Player[playerid][Ropa], Player[playerid][Genero]);
 		
 	mysql_query(db, query);
@@ -379,6 +413,78 @@ public CargarDB(){
 	}
 }
 
+
+// admin system
+
+CMD:daradmin(playerid, params[]){
+	new ID, ADMIN, str[200];
+	if(sscanf(params, "dd", ID, ADMIN)) return SendClientMessage(playerid, -1, "Porfavor ocupa /daradmin [ID] [RANGO]");
+	if(ID == playerid) return SendClientMessage(playerid, -1, "No puedes darte admin a ti mismo");
+	if(!IsPlayerConnected(ID)) return 1;
+
+	if(ADMIN == 0){
+		Player[ID][pAdmin] = 0;
+		SaveData(playerid);
+		new name[MAX_PLAYER_NAME];
+		GetPlayerName(ID, name, sizeof(name));
+		format(str, sizeof(str), "Expulsaste del staff a %s", name);
+		SendClientMessage(playerid, -1, str);
+	}
+
+	if(ADMIN == 1){
+		Player[ID][pAdmin] = 1;
+		SaveData(playerid);
+		new name[MAX_PLAYER_NAME];
+		GetPlayerName(ID, name, sizeof(name));
+		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
+		SendClientMessage(playerid, -1, str);
+		GetPlayerName(playerid, name, sizeof(name));
+		format(str, sizeof(str), "%s Te ha dado %s", name, rankName[Player[ID][pAdmin]]);
+		SendClientMessage(ID, -1, str);
+	}
+	if(ADMIN == 2){
+		Player[ID][pAdmin] = 2;
+		SaveData(playerid);
+		new name[MAX_PLAYER_NAME];
+		GetPlayerName(ID, name, sizeof(name));
+		format(str, sizeof(str), "Le diste %s a %s", rankName[Player[ID][pAdmin]], name);
+		SendClientMessage(playerid, -1, str);
+	}
+	if(ADMIN == 3){
+		Player[ID][pAdmin] = 3;
+		SaveData(playerid);
+		new name[MAX_PLAYER_NAME];
+		GetPlayerName(ID, name, sizeof(name));
+		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
+		SendClientMessage(playerid, -1, str);
+		GetPlayerName(playerid, name, sizeof(name));
+		format(str, sizeof(str), "%s Te ha dado %s", name, rankName[Player[ID][pAdmin]]);
+		SendClientMessage(ID, -1, str);
+	}
+	if(ADMIN == 4){
+		Player[ID][pAdmin] = 4;
+		SaveData(playerid);
+		new name[MAX_PLAYER_NAME];
+		GetPlayerName(ID, name, sizeof(name));
+		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
+		SendClientMessage(playerid, -1, str);
+		GetPlayerName(playerid, name, sizeof(name));
+		format(str, sizeof(str), "%s Te ha dado %s", name, rankName[Player[ID][pAdmin]]);
+		SendClientMessage(ID, -1, str);
+	}
+	if(ADMIN == 5){
+		Player[ID][pAdmin] = 5;
+		SaveData(playerid);
+		new name[MAX_PLAYER_NAME];
+		GetPlayerName(ID, name, sizeof(name));
+		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
+		SendClientMessage(playerid, -1, str);
+		GetPlayerName(playerid, name, sizeof(name));
+		format(str, sizeof(str), "%s Te ha dado %s", name, rankName[Player[ID][pAdmin]]);
+		SendClientMessage(ID, -1, str);
+	}
+	return 1;
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////comandos testear IC//
 
@@ -388,17 +494,8 @@ CMD:csave(playerid){
 	return 1;
 }
 
-CMD:test(playerid){
-	SendClientMessage(playerid, -1, "comandos Funcionando");  //manda el mensaje de testeo
-	return 1;
-}
-
 CMD:ayuda(playerid){
 	DialogHelp(playerid);
 	return 1;
 }
-
-CMD:testgithub(playerid){
-	SendClientMessage(playerid, -1, "Test Github"); // vez?
-	return 1;
-}	
+	
