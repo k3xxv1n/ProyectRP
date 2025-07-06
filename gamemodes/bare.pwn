@@ -298,6 +298,7 @@ public IngresoJugador(playerid)
         else
             Player[playerid][pAdmin] = 0;
 
+		
         SetPVarInt(playerid, "PuedeIngresar", 1);
         IngresarJugador(playerid);
     }
@@ -417,6 +418,7 @@ public CargarDB(){
 // admin system
 
 CMD:daradmin(playerid, params[]){
+	if(Player[playerid][pAdmin] == 4) return 0;
 	new ID, ADMIN, str[200];
 	if(sscanf(params, "dd", ID, ADMIN)) return SendClientMessage(playerid, -1, "Porfavor ocupa /daradmin [ID] [RANGO]");
 	if(ID == playerid) return SendClientMessage(playerid, -1, "No puedes darte admin a ti mismo");
