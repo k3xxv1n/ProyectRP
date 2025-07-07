@@ -348,8 +348,8 @@ public CrearCuenta(playerid)
 	// Insertar todos los campos con valores por defecto si es necesario
 	mysql_format(db, query, sizeof(query), 
 		"INSERT INTO `cuentas` (`Nombre`, `Clave`, `Ropa`, `X`, `Y`, `Z`, `Genero`, `Vida`, `Dinero`, `Edad`, `Chaleco`, `Admin`, `Ban`) VALUES \
-        ('%s','%s',%i,1767.0145, -1896.5106, 13.5634,%i,100,0,0,0.0,0,%i)", 
-		nombre, Player[playerid][Contra], Player[playerid][Ropa], Player[playerid][Genero], Player[playerid][pBan]);
+        ('%s','%s',%i,1767.0145, -1896.5106, 13.5634,%i,100,0,0,0.0,0,0)", 
+		nombre, Player[playerid][Contra], Player[playerid][Ropa], Player[playerid][Genero]);
 		
 	mysql_query(db, query);
 		
@@ -534,64 +534,7 @@ CMD:ban(playerid, params[]){
 	return 1;
 }
 
-CMD:qban(playerid, params[])
-{
-    if(Player[playerid][pAdmin] < 4)
-        return SendClientMessage(playerid, -1, "No tienes permisos para usar este comando");
 
-    new nombre[24];
-    if(sscanf(params, "s[24]", nombre))
-        return SendClientMessage(playerid, -1, "Uso: /qban [Nombre]");
-
-    new safeName[64], query[128];
-    mysql_escape_string(nombre, safeName);
-    format(query, sizeof(query), "SELECT Baneado FROM Cuentas WHERE Nombre = '%s'", safeName);
-
-    // Guardamos el nombre en una variable temporal si necesitas usarlo luego
-    SetPVarString(playerid, "QBan_Nombre", safeName);
-
-    mysql_tquery(db, query, "QBan_CheckBan", "i", playerid);
-    return 1;
-}
-
-forward QBan_CheckBan(playerid);
-public QBan_CheckBan(playerid)
-{
-    if(cache_num_rows() == 0)
-    {
-        SendClientMessage(playerid, -1, "No se encontró ese nombre en la base de datos.");
-        return 1;
-    }
-
-    new baneado;
-    cache_get_value_name_int(0, "Baneado", baneado);
-
-    if(baneado == 0)
-    {
-        SendClientMessage(playerid, -1, "Ese jugador no está baneado.");
-        return 1;
-    }
-
-    // Ahora sí, desbaneamos
-    new nombre[64], query[128];
-    GetPVarString(playerid, "QBan_Nombre", nombre, sizeof(nombre));
-    format(query, sizeof(query), "UPDATE Cuentas SET Baneado = 0 WHERE Nombre = '%s'", nombre);
-    mysql_tquery(db, query, "QBan_Unbanned", "i", playerid);
-
-    return 1;
-}
-forward QBan_Unbanned(playerid);
-public QBan_Unbanned(playerid)
-{
-    new nombre[64];
-    GetPVarString(playerid, "QBan_Nombre", nombre, sizeof(nombre));
-    DeletePVar(playerid, "QBan_Nombre");
-
-    new msg[128];
-    format(msg, sizeof(msg), "[Q-BAN] Has quitado el ban a %s.", nombre);
-    SendClientMessage(playerid, -1, msg);
-    return 1;
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////comandos testear IC//
 
