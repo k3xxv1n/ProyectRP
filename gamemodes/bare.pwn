@@ -25,19 +25,21 @@
 // DIALOG AYUDA
 #define DIALOG_HELP     5
 #define DIALOG_HELP2	6
-
+////define colores
+#define COLOR_RED 0xFF0000FF
+#define COLOR_YELLOW 0xFFFF00FF
 
 //news
 
 new MySQL:db;
 
 new const rankName[][] = {
-	"Usuario",
-	"Ayudante",
-	"Moderador",
-	"Moderador Global",
-	"Encargado Staff",
-	"CEO"
+	"Usuario",//0
+	"Ayudante",//1
+	"Moderador",//2
+	"Moderador Global",//3
+	"Encargado Staff",//4
+	"CEO"//5
 };
 
 //enums 
@@ -55,7 +57,8 @@ enum jInfo
 	Float:Vida,
 	Float:Chaleco,
 	Dinero,
-	pAdmin
+	pAdmin,
+	pBan
 }
 
 new Player[MAX_PLAYERS][jInfo];
@@ -245,7 +248,7 @@ public SaveData(playerid)
 	GetPlayerPos(playerid, jX, jY, jZ);
 	GetPlayerHealth(playerid, hp);
 	GetPlayerArmour(playerid, chale);
-	mysql_format(db, query, sizeof query, "UPDATE `cuentas` SET `Edad`='%i',`Ropa`='%i',`X`='%f',`Y`='%f',`Z`='%f',`Genero`='%i',`Vida`='%f',`Chaleco`='%f', `Admin`='%i' WHERE `Nombre`='%s'", Player[playerid][Edad], Player[playerid][Ropa], jX, jY, jZ, Player[playerid][Genero], hp, chale, Player[playerid][pAdmin], nombre);
+	mysql_format(db, query, sizeof(query), "UPDATE `cuentas` SET `Edad`='%i',`Ropa`='%i',`X`='%f',`Y`='%f',`Z`='%f',`Genero`='%i',`Vida`='%f',`Chaleco`='%f', `Admin`='%i', `Ban`='%i' WHERE `Nombre`='%s'", Player[playerid][Edad], Player[playerid][Ropa], jX, jY, jZ, Player[playerid][Genero], hp, chale, Player[playerid][pAdmin], Player[playerid][pBan], nombre);
 	mysql_query(db, query);
 
 	return 1;
@@ -298,7 +301,18 @@ public IngresoJugador(playerid)
         else
             Player[playerid][pAdmin] = 0;
 
-		
+		cache_is_value_name_null(0, "Ban", isNull);
+		if(!isNull)
+			cache_get_value_int(0, "Ban", Player[playerid][pBan]);
+		else{
+			Player[playerid][pBan] = 0;
+		}
+		if(Player[playerid][pBan] == 1){
+			SendClientMessage(playerid, -1, "Estas Baneado Contacta Crea ticket en discord");
+			Kick(playerid);
+			return 1;
+		}
+
         SetPVarInt(playerid, "PuedeIngresar", 1);
         IngresarJugador(playerid);
     }
@@ -333,9 +347,9 @@ public CrearCuenta(playerid)
 
 	// Insertar todos los campos con valores por defecto si es necesario
 	mysql_format(db, query, sizeof(query), 
-		"INSERT INTO `cuentas` (`Nombre`, `Clave`, `Ropa`, `X`, `Y`, `Z`, `Genero`, `Vida`, `Dinero`, `Edad`, `Chaleco`, `Admin`) VALUES \
-        ('%s','%s',%i,1767.0145, -1896.5106, 13.5634,%i,100,0,0,0.0,0)", 
-		nombre, Player[playerid][Contra], Player[playerid][Ropa], Player[playerid][Genero]);
+		"INSERT INTO `cuentas` (`Nombre`, `Clave`, `Ropa`, `X`, `Y`, `Z`, `Genero`, `Vida`, `Dinero`, `Edad`, `Chaleco`, `Admin`, `Ban`) VALUES \
+        ('%s','%s',%i,1767.0145, -1896.5106, 13.5634,%i,100,0,0,0.0,0,%i)", 
+		nombre, Player[playerid][Contra], Player[playerid][Ropa], Player[playerid][Genero], Player[playerid][pBan]);
 		
 	mysql_query(db, query);
 		
@@ -418,7 +432,7 @@ public CargarDB(){
 // admin system
 
 CMD:daradmin(playerid, params[]){
-	if(Player[playerid][pAdmin] == 4) return 0;
+	if(Player[playerid][pAdmin] < 4) return 0;
 	new ID, ADMIN, str[200];
 	if(sscanf(params, "dd", ID, ADMIN)) return SendClientMessage(playerid, -1, "Porfavor ocupa /daradmin [ID] [RANGO]");
 	if(ID == playerid) return SendClientMessage(playerid, -1, "No puedes darte admin a ti mismo");
@@ -431,11 +445,12 @@ CMD:daradmin(playerid, params[]){
 		GetPlayerName(ID, name, sizeof(name));
 		format(str, sizeof(str), "Expulsaste del staff a %s", name);
 		SendClientMessage(playerid, -1, str);
+		SendClientMessage(ID, -1, str);
 	}
 
 	if(ADMIN == 1){
 		Player[ID][pAdmin] = 1;
-		SaveData(playerid);
+		SaveData(ID);
 		new name[MAX_PLAYER_NAME];
 		GetPlayerName(ID, name, sizeof(name));
 		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
@@ -446,7 +461,7 @@ CMD:daradmin(playerid, params[]){
 	}
 	if(ADMIN == 2){
 		Player[ID][pAdmin] = 2;
-		SaveData(playerid);
+		SaveData(ID);
 		new name[MAX_PLAYER_NAME];
 		GetPlayerName(ID, name, sizeof(name));
 		format(str, sizeof(str), "Le diste %s a %s", rankName[Player[ID][pAdmin]], name);
@@ -454,7 +469,7 @@ CMD:daradmin(playerid, params[]){
 	}
 	if(ADMIN == 3){
 		Player[ID][pAdmin] = 3;
-		SaveData(playerid);
+		SaveData(ID);
 		new name[MAX_PLAYER_NAME];
 		GetPlayerName(ID, name, sizeof(name));
 		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
@@ -464,8 +479,9 @@ CMD:daradmin(playerid, params[]){
 		SendClientMessage(ID, -1, str);
 	}
 	if(ADMIN == 4){
+		if(Player[playerid][pAdmin] == 4) return SendClientMessage(playerid, -1, "No puedes dar un rango mas alto que el tuyo");
 		Player[ID][pAdmin] = 4;
-		SaveData(playerid);
+		SaveData(ID);
 		new name[MAX_PLAYER_NAME];
 		GetPlayerName(ID, name, sizeof(name));
 		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
@@ -475,8 +491,9 @@ CMD:daradmin(playerid, params[]){
 		SendClientMessage(ID, -1, str);
 	}
 	if(ADMIN == 5){
+		if(Player[playerid][pAdmin] == 4) return SendClientMessage(playerid, -1, "No puedes dar un rango mas alto que el tuyo");
 		Player[ID][pAdmin] = 5;
-		SaveData(playerid);
+		SaveData(ID);
 		new name[MAX_PLAYER_NAME];
 		GetPlayerName(ID, name, sizeof(name));
 		format(str, sizeof(str), "Le diste %s a %s",rankName[Player[ID][pAdmin]], name);
@@ -486,6 +503,94 @@ CMD:daradmin(playerid, params[]){
 		SendClientMessage(ID, -1, str);
 	}
 	return 1;
+}
+
+// Comandos Admin
+
+CMD:kick(playerid, params[]){
+	new ID, name[MAX_PLAYER_NAME], str[100];
+	if(Player[playerid][pAdmin] < 1) return 0;
+	if(sscanf(params, "d", ID)) return SendClientMessage(playerid, -1, "Ocupa /kick [ID]");
+	if(!IsPlayerConnected(ID) || ID == INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "Id Invalido");
+	if(ID == playerid) return SendClientMessage(playerid, -1, "No puedes kickearte a ti mismo");
+	Kick(ID);
+	GetPlayerName(ID, name, sizeof(name));
+	format(str, sizeof(str), "Has kickeado al usuario %s", name);
+	SendClientMessage(playerid, -1, str);
+	return 1;
+}
+
+CMD:ban(playerid, params[]){
+	new ID, name[MAX_PLAYER_NAME], str[100];
+	if(Player[playerid][pAdmin] < 5) return 0;
+	if(sscanf(params, "d", ID)) return SendClientMessage(playerid, -1, "Ocupa /ban [ID]");
+	if(ID == playerid) return SendClientMessage(playerid, -1, "No puedes Banearte a ti mismo");
+	if(!IsPlayerConnected(ID) || ID == INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "Id Invalido");
+	GetPlayerName(ID, name, sizeof(name));
+	Player[ID][pBan] = 1;
+	Kick(ID);
+	format(str, sizeof(str), "Has Baneado al usuario %s", name);
+	SendClientMessage(playerid, -1, str);
+	return 1;
+}
+
+CMD:qban(playerid, params[])
+{
+    if(Player[playerid][pAdmin] < 4)
+        return SendClientMessage(playerid, -1, "No tienes permisos para usar este comando");
+
+    new nombre[24];
+    if(sscanf(params, "s[24]", nombre))
+        return SendClientMessage(playerid, -1, "Uso: /qban [Nombre]");
+
+    new safeName[64], query[128];
+    mysql_escape_string(nombre, safeName);
+    format(query, sizeof(query), "SELECT Baneado FROM Cuentas WHERE Nombre = '%s'", safeName);
+
+    // Guardamos el nombre en una variable temporal si necesitas usarlo luego
+    SetPVarString(playerid, "QBan_Nombre", safeName);
+
+    mysql_tquery(db, query, "QBan_CheckBan", "i", playerid);
+    return 1;
+}
+
+forward QBan_CheckBan(playerid);
+public QBan_CheckBan(playerid)
+{
+    if(cache_num_rows() == 0)
+    {
+        SendClientMessage(playerid, -1, "No se encontró ese nombre en la base de datos.");
+        return 1;
+    }
+
+    new baneado;
+    cache_get_value_name_int(0, "Baneado", baneado);
+
+    if(baneado == 0)
+    {
+        SendClientMessage(playerid, -1, "Ese jugador no está baneado.");
+        return 1;
+    }
+
+    // Ahora sí, desbaneamos
+    new nombre[64], query[128];
+    GetPVarString(playerid, "QBan_Nombre", nombre, sizeof(nombre));
+    format(query, sizeof(query), "UPDATE Cuentas SET Baneado = 0 WHERE Nombre = '%s'", nombre);
+    mysql_tquery(db, query, "QBan_Unbanned", "i", playerid);
+
+    return 1;
+}
+forward QBan_Unbanned(playerid);
+public QBan_Unbanned(playerid)
+{
+    new nombre[64];
+    GetPVarString(playerid, "QBan_Nombre", nombre, sizeof(nombre));
+    DeletePVar(playerid, "QBan_Nombre");
+
+    new msg[128];
+    format(msg, sizeof(msg), "[Q-BAN] Has quitado el ban a %s.", nombre);
+    SendClientMessage(playerid, -1, msg);
+    return 1;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////comandos testear IC//
@@ -500,4 +605,6 @@ CMD:ayuda(playerid){
 	DialogHelp(playerid);
 	return 1;
 }
+	
+///////////////////comandos basicos ///	
 	
