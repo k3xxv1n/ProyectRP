@@ -76,8 +76,16 @@ main()
 
 public OnPlayerConnect(playerid)
 {
-	new query[520], nombre[MAX_PLAYER_NAME];
+	// sistema de color blanco en el nombre
+	new name[MAX_PLAYER_NAME];
+	SetPlayerColor(playerid, 0x0000FF);
+    GetPlayerName(playerid, name, sizeof(name));
+    new newname[MAX_PLAYER_NAME + 3];
+    format(newname, sizeof(newname), "~w~%s", name);
+    SetPlayerName(playerid, newname);
 
+   // sistema de login
+    new query[520], nombre[MAX_PLAYER_NAME];
 	GetPlayerName(playerid, nombre, sizeof(nombre));
 	mysql_format(db, query, sizeof(query), "SELECT * FROM `cuentas` WHERE `Nombre` ='%s'", nombre);
 	mysql_pquery(db, query, "VerifyUser", "d", playerid);
@@ -89,6 +97,28 @@ public OnPlayerDisconnect(playerid){
 	SaveData(playerid);
 	return 1;
 }
+// borra las _ de Nombre_Apellido 
+stock ReplaceUnderscores(name[])
+{
+    for (new i = 0; name[i] != '\0'; i++)
+    {
+        if (name[i] == '_') name[i] = ' ';
+    }
+    return 1;
+}
+
+public OnPlayerText(playerid, text[])
+{
+    new name[MAX_PLAYER_NAME], msg[150];
+
+    GetPlayerName(playerid, name, sizeof(name));
+    ReplaceUnderscores(name);
+
+    format(msg, sizeof(msg), "%s: %s", name, text);
+    SendClientMessageToAll(-1, msg);
+    return 0; 
+}
+
 public OnPlayerSpawn(playerid)
 {
 	if(Player[playerid][pBan] == 1){
