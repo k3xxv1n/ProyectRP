@@ -91,7 +91,7 @@ public OnPlayerSpawn(playerid)
     {
         // Congelar al jugador y evitar control
         TogglePlayerControllable(playerid, false);
-        // TambiÈn puedes moverlo a una posiciÛn segura o fuera del mapa
+        // Tambiùn puedes moverlo a una posiciùn segura o fuera del mapa
         SetPlayerPos(playerid, 0.0, 0.0, -100.0);
         return 0; // Evitar spawn normal
     }
@@ -262,7 +262,7 @@ public IngresoJugador(playerid)
 
     if (rows == 0)
     {
-        ShowPlayerDialog(playerid, DIALOG_INGRESO, DIALOG_STYLE_INPUT, "Ingreso", "°Error!\n\nLa clave no es correcta.", "Continuar", "Cancelar");
+        ShowPlayerDialog(playerid, DIALOG_INGRESO, DIALOG_STYLE_INPUT, "Ingreso", "ùError!\n\nLa clave no es correcta.", "Continuar", "Cancelar");
     }
     else
     {
