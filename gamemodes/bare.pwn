@@ -25,6 +25,10 @@
 // DIALOG AYUDA
 #define DIALOG_HELP     5
 #define DIALOG_HELP2	6
+
+// DIALOG BAN
+#define DIALOG_BAN 		7
+
 ////define colores
 #define COLOR_RED 0xFF0000FF
 #define COLOR_YELLOW 0xFFFF00FF
@@ -87,6 +91,12 @@ public OnPlayerDisconnect(playerid){
 }
 public OnPlayerSpawn(playerid)
 {
+	if(Player[playerid][pBan] == 1){
+			TogglePlayerControllable(playerid, false);
+			SendClientMessage(playerid, -1, "Estas Baneado Contacta Crea ticket en discord");
+			ShowPlayerDialog(playerid, DIALOG_BAN, DIALOG_STYLE_MSGBOX, "Baneado", "Te encuentras baneado Crea ticket en discord", "Aceptar", "Cerrar");
+			return 1;
+	}
     if (GetPVarInt(playerid, "PuedeIngresar") == 0)
     {
         // Congelar al jugador y evitar control
@@ -136,6 +146,14 @@ stock bool:VerifyCorreo(const correo[]){
 public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]){
 	switch(dialogid)
 	{
+		case DIALOG_BAN:{
+			if(response){
+				Kick(playerid);
+			}
+			else {
+				Kick(playerid);
+			}
+		}
 		case DIALOG_REGISTRO:{
 			if(!response) return Kick(playerid);
 
@@ -307,11 +325,6 @@ public IngresoJugador(playerid)
 		else{
 			Player[playerid][pBan] = 0;
 		}
-		if(Player[playerid][pBan] == 1){
-			SendClientMessage(playerid, -1, "Estas Baneado Contacta Crea ticket en discord");
-			Kick(playerid);
-			return 1;
-		}
 
         SetPVarInt(playerid, "PuedeIngresar", 1);
         IngresarJugador(playerid);
@@ -376,6 +389,9 @@ public VerifyUser(playerid)
     }
     else
     {
+		new banValue;
+		cache_get_value_name_int(0, "Ban", banValue);
+		Player[playerid][pBan] = banValue;
         ShowPlayerDialog(playerid, DIALOG_INGRESO, DIALOG_STYLE_PASSWORD, "Ingreso", "Bienvenido\n\nIngrese su clave para ingresar.", "Continuar", "Cancelar");
     }
     return 1;
@@ -531,6 +547,17 @@ CMD:ban(playerid, params[]){
 	Kick(ID);
 	format(str, sizeof(str), "Has Baneado al usuario %s", name);
 	SendClientMessage(playerid, -1, str);
+	return 1;
+}
+
+CMD:qban(playerid, params[]){
+	if(Player[playerid][pAdmin] < 5) return 0;
+	new name[24], query[520], str[100];
+	if(sscanf(params, "s[24]", name)) return SendClientMessage(playerid, -1 ,"Ocupa /qban Nombre_Apellido");
+	mysql_format(db, query, sizeof(query), "UPDATE cuentas SET Ban=0 WHERE Nombre='%e'", name);
+	mysql_query(db, query);
+	format(str, sizeof(str), "Le quitaste el baneo al usuario %s", name);
+	SendClientMessage(playerid,COLOR_RED, str);
 	return 1;
 }
 
