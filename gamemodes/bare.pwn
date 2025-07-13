@@ -10,9 +10,9 @@
 // Coneccion con la db
 
 #define IPDB 		"51.81.59.76"
-#define USERDB 		"u3108285_T4Lb9MilLa"
-#define PASSDB 		"QXt!@ZFYOUInM@YAybo1Bdia"
-#define DATEBASE	"s3108285_qwq"
+#define USERDB 		"u3123607_6XxOwXNJDd"
+#define PASSDB 		"rNcb.EjTnzJkQ!ycY2c1Wm3="
+#define DATEBASE	"s3123607_db1752377190569"
 
 
 // dialog defines
@@ -78,7 +78,6 @@ public OnPlayerConnect(playerid)
 {
 	// sistema de color blanco en el nombre
 	new name[MAX_PLAYER_NAME];
-	SetPlayerColor(playerid, 0x0000FF);
     GetPlayerName(playerid, name, sizeof(name));
     new newname[MAX_PLAYER_NAME + 3];
     format(newname, sizeof(newname), "~w~%s", name);
@@ -390,10 +389,9 @@ public CrearCuenta(playerid)
 
 	// Insertar todos los campos con valores por defecto si es necesario
 	mysql_format(db, query, sizeof(query), 
-		"INSERT INTO `cuentas` (`Nombre`, `Clave`, `Ropa`, `X`, `Y`, `Z`, `Genero`, `Vida`, `Dinero`, `Edad`, `Chaleco`, `Admin`, `Ban`) VALUES \
-        ('%s','%s',%i,1767.0145, -1896.5106, 13.5634,%i,100,0,0,0.0,0,0)", 
-		nombre, Player[playerid][Contra], Player[playerid][Ropa], Player[playerid][Genero]);
-		
+	"INSERT INTO `cuentas` (`Nombre`, `Clave`, `Correo`, `Ropa`, `X`, `Y`, `Z`, `Genero`, `Vida`, `Dinero`, `Edad`, `Chaleco`, `Admin`, `Ban`) VALUES \
+	('%s','%s','%s',%i,1767.0145,-1896.5106,13.5634,%i,100,0,0,0.0,0,0)",
+	nombre, Player[playerid][Contra], Player[playerid][Correo], Player[playerid][Ropa], Player[playerid][Genero]);
 	mysql_query(db, query);
 		
 	return 1;
