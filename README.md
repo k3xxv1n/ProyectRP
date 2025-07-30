@@ -1,5 +1,5 @@
 # ProyectRP
-Servidor de samp roleplay desde 0 By 
+Servidor de samp roleplay desde 0
 
 
 ProyectRP es un servidor creado desde 0 tiene sistema de login, administrativo con 5 rangos mysql bien echa (Creo)
